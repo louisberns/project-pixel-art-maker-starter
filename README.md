@@ -1,5 +1,7 @@
 # Pixel Art Maker Project
 
+## Access online: https://louisberns.github.io/project-pixel-art-maker-starter/
+
 ## Table of Contents
 
 * [Instructions](#instructions)
