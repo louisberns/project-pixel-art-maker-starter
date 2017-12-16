@@ -1,11 +1,13 @@
 body {
     text-align: center;
+    font-family: monospace, open-sans;
 }
 
 h1 {
     font-family: Monoton;
     font-size: 70px;
     margin: 0.2em;
+    font-weight: 400;
 }
 
 h2 {
@@ -16,10 +18,90 @@ h2:first-of-type {
     margin-top: 0.5em;
 }
 
-table,
-tr,
-td {
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 40vw;
+  box-sizing: border-box;
+  padding: 1.5vw 2vw;
+}
+
+#header-grid {
+  order: 0;
+  min-width: 90vw;
+}
+
+#header-psize {
+  order: 1;
+}
+
+#header-color {
+  order: 3;
+}
+
+#canvas-box {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#pixel-canvas {
+  display: flex;
+  justify-content: center;
+  max-width: 80vw;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.canvas-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: none;
+}
+
+.item-small {
+  width: 1vw;
+  height: 1vw;
+}
+
+.item-normal {
+  width: 2vw;
+  height: 2vw;
+}
+
+.item-large {
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+#pixel-canvas, .canvas-row {
     border: 1px solid black;
+}
+
+.item-open {
+  display: flex;
+  animation: open 1s;
+}
+
+.item-closed {
+  display: none;
+}
+
+@keyframes open {
+  0% {transform: scale(1.5);}
+  20% {transform: scale(0);}
+  100% {transform: scale(1);}
 }
 
 table {

@@ -2,26 +2,43 @@
 <html>
 <head>
     <title>Pixel Art Maker!</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Lab: Pixel Art Maker</h1>
 
-    <h2>Choose Grid Size</h2>
-    <form id="sizePicker">
-        Grid Height:
-        <input type="number" id="input_height" name="height" min="1" value="1">
-        Grid Width:
-        <input type="number" id="input_width" name="width" min="1" value="1">
-        <input type="submit">
-    </form>
-
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker">
+    <div id="header">
+      <div id="header-grid" class="header-item">
+        <h2>Choose Grid Size</h2>
+        <form id="sizePicker">
+            Grid Height:
+            <input type="range" id="input_height" name="height" min="1" max="50" value="1" oninput="document.getElementById('height-label').innerText = this.value">
+            <em id="height-label">1</em>
+            Grid Width:
+            <input type="range" id="input_width" name="width" min="1" max="50" value="1" oninput="document.getElementById('width-label').innerText = this.value">
+            <em id="width-label">1</em>
+            <input type="button" value="Submit" onclick="return makeGrid()">
+        </form>
+      </div>
+      <div id="header-psize" class="header-item">
+        <h2>Pixel Size</h2>
+        <select name="p-size" id="pixel-size">
+          <option id="pixel-small" value="small">Small</option>
+          <option id="pixel-normal" value="normal" selected>Normal</option>
+          <option id="pixel-large" value="large">Large</option>
+        </select>
+      </div>
+      <div id="header-color" class="header-item">
+        <h2>Pick A Color</h2>
+        <input type="color" id="color-picker">
+      </div>
+    </div>
 
     <h2>Design Canvas</h2>
-    <table id="pixel_canvas"></table>
+    <div id="canvas-box">
+      <div id="pixel-canvas"></div>
+    </div>
 
     <script src="designs.js"></script>
 </body>
